@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="40dp"
+    android:background="@drawable/ctf_bg">
+
+    <!-- Hardcoded Secrets Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/secretManagerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shonen"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#154734"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Feature 2 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/VulnerableServiceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Isekai"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#154734"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Feature 3 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/DeeplinkHandlerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seinen"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#154734"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Feature 4 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/InsecureButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Slice of Life"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#154734"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Feature 5 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/PsychoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Psychological and Thriller"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#154734"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"/>
+
+</LinearLayout>

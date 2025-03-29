@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="@android:color/black">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/fontImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:scaleType="center"
+        android:src="@drawable/attack" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="310dp"
+        android:layout_height="100dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/stegnography" />
+
+
+    <!-- Decode Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Decode Message"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnSelectEncodedImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Encoded Image"/>
+
+    <TextView
+        android:id="@+id/tvEncodedImagePath"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No image selected"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/btnDecodeMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Decode Message"/>
+
+    <TextView
+        android:id="@+id/tvDecodedMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/holo_green_light"/>
+
+    <!-- Flag Input Field -->
+    <EditText
+        android:id="@+id/flagInputMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="FLAG{...}"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:textColorHint="#888888"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"/>
+
+    <!-- Check Flag Button -->
+    <Button
+        android:id="@+id/checkFlagButtonMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Flag"
+        android:textSize="18sp"
+        android:backgroundTint="#154734"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/showImageButtonMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Secret Slice of Life"
+        android:textSize="18sp"
+        android:backgroundTint="#154734"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"/>
+
+
+    <ImageView
+        android:id="@+id/secretImageMain"
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        android:src="@drawable/ogf"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

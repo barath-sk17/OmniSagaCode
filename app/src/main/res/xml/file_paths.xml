@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path name="ctf_files" path="." />
+    <cache-path name="db_cache" path="." />
+    <external-files-path name="external_ctf_files" path="." />
+</paths>

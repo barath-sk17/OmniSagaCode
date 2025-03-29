@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ctfapp</string>
+    <string name="hint">Layers obscure the truth; Debug reveals the path, and a library whispers its secrets.</string>
+    <string name="maybe_ucan">Hidden among &quot;pngs&quot;, that is all I can say. Good luck uncovering the unseen!</string>
+</resources>

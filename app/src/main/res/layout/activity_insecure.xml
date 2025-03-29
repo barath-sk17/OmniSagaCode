@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="@android:color/black">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/fontImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:scaleType="center"
+        android:src="@drawable/attack" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="310dp"
+        android:layout_height="100dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/font_omni5" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="15dp"
+        android:backgroundTint="#154734"
+        android:padding="30dp"
+        android:layout_marginBottom="40dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fragments of truth are scattered, encoded, and concealed. What is stored must be unlocked, what is altered must be restored. Follow the layers, decode the whispers, and piece together what was never meant to be seen."
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:textColor="#EEEEEE"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#FFFFFF"/>
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"/>
+</LinearLayout>

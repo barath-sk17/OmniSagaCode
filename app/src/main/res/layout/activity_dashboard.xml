@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="@android:color/black">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/fontImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:scaleType="center"
+        android:src="@drawable/attack" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="310dp"
+        android:layout_height="100dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/font_omni5" />
+
+    <TextView
+        android:id="@+id/flagTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FLAG{FAKE_CTF_FLAG}"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/exportButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Export Data"/>
+
+    <!-- Flag Input Field -->
+    <EditText
+        android:id="@+id/flagInput3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="FLAG{...}"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:textColorHint="#888888"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"/>
+
+    <!-- Check Flag Button -->
+    <Button
+        android:id="@+id/checkFlagButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Flag"
+        android:textSize="18sp"
+        android:backgroundTint="#154734"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/showImageButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Secret Slice of Life"
+        android:textSize="18sp"
+        android:backgroundTint="#154734"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"/>
+
+
+    <ImageView
+        android:id="@+id/secretImage3"
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        android:src="@drawable/sliceoflife"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+</LinearLayout>
