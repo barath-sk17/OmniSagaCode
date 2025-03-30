@@ -43,8 +43,8 @@ class FightActivity : AppCompatActivity() {
         decodeMessage()
 
         checkFlagButton.setOnClickListener {
-            //checkFlag()
-            checkProcess(flagInput)
+            checkFlag()
+            // checkProcess(flagInput)
         }
 
     }
