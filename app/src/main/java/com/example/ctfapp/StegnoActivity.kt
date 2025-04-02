@@ -53,7 +53,8 @@ class StegnoActivity : AppCompatActivity() {
             Log.d(TAG, "checkFlagButton: Entered flag: $enteredFlag")
 
             if (dbHelper.verifyFlag(enteredFlag)) {
-                Toast.makeText(this, "✅ Correct Flag!", Toast.LENGTH_SHORT).show()
+                Toast.
+                makeText(this, "✅ Correct Flag!", Toast.LENGTH_SHORT).show()
                 showImageButton.visibility = View.VISIBLE
                 Log.d(TAG, "checkFlagButton: Correct flag entered")
             } else {
@@ -65,6 +66,7 @@ class StegnoActivity : AppCompatActivity() {
 
         showImageButton.setOnClickListener {
             secretImage.visibility = View.VISIBLE
+            Log.d("OGF", "why don't you check c folder")
             Toast.makeText(this, "🎉 Secret Image Revealed!", Toast.LENGTH_SHORT).show()
             Log.d(TAG, "showImageButton: Secret image revealed")
         }

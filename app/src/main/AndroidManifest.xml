@@ -20,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ctfapp">
         <activity
+            android:name=".LicenseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PinActivity"
+            android:exported="false" />
+        <activity
             android:name=".CreditsActivity"
             android:exported="false" />
         <activity

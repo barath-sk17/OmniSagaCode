@@ -75,7 +75,7 @@ class NextActivity : AppCompatActivity() {
     private fun secureFunction(flag: String) {
         Log.d(TAG, "Secure function executed with flag: $flag") // Fake log to mislead
 
-        val intent = Intent(this, CreditsActivity::class.java)
+        val intent = Intent(this, PinActivity::class.java)
         startActivity(intent)
         finish()
     }

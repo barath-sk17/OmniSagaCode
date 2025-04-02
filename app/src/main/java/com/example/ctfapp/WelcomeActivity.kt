@@ -33,8 +33,8 @@ class WelcomeActivity : AppCompatActivity() {
 
             // Example: Navigate to another activity
 
-            val intent = Intent(this, AmigoActivity::class.java)
-            // val intent = Intent(this, FightActivity::class.java)
+//            val intent = Intent(this, AmigoActivity::class.java)
+            val intent = Intent(this, FightActivity::class.java)
             startActivity(intent)
         }
 

@@ -76,11 +76,11 @@ class DeeplinkHandlerActivity : AppCompatActivity() {
             val flag = FlagManager.retrieveFlag(this)
             flagTextView.text = flag  // Show the flag
             checkFlagButton.visibility = View.VISIBLE  // Show "Check Flag" button
-
+            Log.d("Seinen (青年)", "Paths hide in names; words unlock, not code.")
             Log.d("DeeplinkHandler", "🎉 Flag retrieved successfully!")
         } else {
             flagTextView.text = "Unauthorized access attempt detected!"
-            Log.d("Seinen (青年)", "Paths hide in names; words unlock, not code.")
+
         }
     }
 }

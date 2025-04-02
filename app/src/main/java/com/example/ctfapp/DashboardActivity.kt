@@ -86,6 +86,7 @@ class DashboardActivity : AppCompatActivity() {
 
         hiddenButton.setOnClickListener {
             secretImage.visibility = View.VISIBLE
+            Log.d("Slice of Life", "Paths hide in names; words unlock, not code.")
             Toast.makeText(this, "🔓 Secret Image Revealed!", Toast.LENGTH_SHORT).show()
             Log.d("CTF", "🔓 Secret Image Unlocked!")
         }
