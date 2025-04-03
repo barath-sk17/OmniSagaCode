@@ -79,7 +79,7 @@ class VulnerableServiceActivity : AppCompatActivity() {
         showImageButton.setOnClickListener {
             imageView.visibility = View.VISIBLE
             Glide.with(this).load(R.drawable.isekai).into(imageView)
-            Log.d("Isekai (異世界)", "Found in graddle/wrapper")
+            Log.d("Isekai (異世界)", "SQLite and binary coexist where secrets rest. What if an image wasn’t where you expected it to be?")
         }
     }
 

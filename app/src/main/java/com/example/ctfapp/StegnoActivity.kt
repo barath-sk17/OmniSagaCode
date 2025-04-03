@@ -66,7 +66,7 @@ class StegnoActivity : AppCompatActivity() {
 
         showImageButton.setOnClickListener {
             secretImage.visibility = View.VISIBLE
-            Log.d("OGF", "why don't you check c folder")
+            Log.d("OGF", "If you’ve ever been stuck in a loop, bouncing between failures, you might just call it… buggy.")
             Toast.makeText(this, "🎉 Secret Image Revealed!", Toast.LENGTH_SHORT).show()
             Log.d(TAG, "showImageButton: Secret image revealed")
         }

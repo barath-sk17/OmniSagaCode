@@ -1,49 +1,43 @@
-package com.example.ctfapp
-
 import android.app.Service
-import android.content.Context
 import android.content.Intent
-import android.os.FileObserver
+import android.content.SharedPreferences
+import android.content.res.AssetManager
 import android.os.IBinder
 import android.util.Log
-import java.io.File
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 class MyService : Service() {
 
-    private var fileObserver: FileObserver? = null
 
     override fun onCreate() {
         super.onCreate()
-        val flagFile = File(filesDir, "flag.txt")
-
-        if (!flagFile.exists()) {
-            Log.e("MyService", "Flag file does not exist. FileObserver not started.")
-            return
-        }
-
-        fileObserver = object : FileObserver(flagFile.absolutePath, MODIFY) {
-            override fun onEvent(event: Int, path: String?) {
-                if (event == MODIFY) {
-                    Log.d("MyService", "Flag file modified: $path")
-                    notifyObserver()
-                }
-            }
-        }
-
-        fileObserver?.startWatching()
-        Log.d("MyService", "Started watching flag file")
+        readFlagFile()
     }
 
-    private fun notifyObserver() {
-        val sharedPreferences = applicationContext.getSharedPreferences("FlagPrefs", Context.MODE_PRIVATE)
-        sharedPreferences.edit().putBoolean("flagChanged", true).apply()
+    private fun readFlagFile() {
+        try {
+            val assetManager: AssetManager = assets
+            val inputStream = assetManager.open("files/flag.txt")
+            val reader = BufferedReader(InputStreamReader(inputStream))
+            val flagContent = reader.use { it.readText() }
+
+            Log.d("MyService", "Flag file content: $flagContent")
+            notifyObserver(flagContent)
+
+        } catch (e: Exception) {
+            Log.e("MyService", "Error reading flag file from assets", e)
+        }
+    }
+
+    private fun notifyObserver(flagContent: String) {
+        val sharedPreferences: SharedPreferences = getSharedPreferences("FlagPrefs", MODE_PRIVATE)
+        sharedPreferences.edit().putString("flagContent", flagContent).apply()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        fileObserver?.stopWatching()
-        fileObserver = null
-        Log.d("MyService", "Stopped watching flag file")
+        Log.d("MyService", "Service destroyed")
     }
 
     override fun onBind(intent: Intent?): IBinder? {

@@ -52,6 +52,12 @@ android {
             path = file("src/main/cpp/CMakeLists.txt")
         }
     }
+
+    
+
+    aaptOptions {
+        noCompress("arsc")
+    }
 }
 
 

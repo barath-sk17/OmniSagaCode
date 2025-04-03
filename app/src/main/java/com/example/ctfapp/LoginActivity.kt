@@ -55,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
         showImageButton.setOnClickListener {
             Log.d("LoginActivity", "Show Image button clicked")
             secretImage.visibility = View.VISIBLE
-            Log.d("Psych&Thrill", "The .png file is located in the Debug directory under .cxx")
+            Log.d("Psych&Thrill", "Sometimes, treasures are stored where apps keep their knowledge. Dig deep in the archives where data meets assets.")
             Toast.makeText(this, "Revealing the secret image!", Toast.LENGTH_SHORT).show()
         }
     }

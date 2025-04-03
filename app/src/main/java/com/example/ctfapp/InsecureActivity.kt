@@ -34,7 +34,7 @@ class InsecureActivity : AppCompatActivity() {
 
                 // Simulating storing flag parts
                 Log.d(TAG, "Storing flag parts in various locations")
-//                StorageHelper.storeFlagParts(this)
+                StorageHelper.storeFlagParts(this)
 //                InSecureDB.storeFlagPart(this)
 //                XorUtils.storeEncryptedFlag(this)
 

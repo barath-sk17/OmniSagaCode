@@ -43,14 +43,13 @@ class DashboardActivity : AppCompatActivity() {
             "ERROR"
         }
 
-        val flagPart3 = encryptedFlagPart3?.let { xorDecrypt(it, "CTF") } ?: "ERROR"
-        val flagPart4 = flagPart3?.let { xorDecrypt(it, "CTF") } ?: "ERROR"
+        val flagPart3 = encryptedFlagPart3
 
         Log.d("CTF", "🔍 Decoded Flag Part 1: $flagPart1")
-        Log.d("CTF", "🔍 Decrypted Flag Part 3: $flagPart4")
+        Log.d("CTF", "🔍 Decrypted Flag Part 3: $flagPart3")
 
-        val fullFlag = if (flagPart1 != "ERROR" && flagPart2 != null && flagPart4 != "ERROR") {
-            "$flagPart1$flagPart2$flagPart4"
+        val fullFlag = if (flagPart1 != "ERROR" && flagPart2 != null && flagPart3 != "ERROR") {
+            "$flagPart1$flagPart2$flagPart3"
         } else {
             "INVALID_FLAG"
         }
@@ -86,7 +85,7 @@ class DashboardActivity : AppCompatActivity() {
 
         hiddenButton.setOnClickListener {
             secretImage.visibility = View.VISIBLE
-            Log.d("Slice of Life", "Paths hide in names; words unlock, not code.")
+            Log.d("Slice of Life", "You won’t find it in the gallery, but deep in the library of this app, a hidden vision awaits")
             Toast.makeText(this, "🔓 Secret Image Revealed!", Toast.LENGTH_SHORT).show()
             Log.d("CTF", "🔓 Secret Image Unlocked!")
         }

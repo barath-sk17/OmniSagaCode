@@ -7,23 +7,22 @@ import android.util.Base64
 import android.util.Log
 import org.bouncycastle.crypto.generators.Argon2BytesGenerator
 import org.bouncycastle.crypto.params.Argon2Parameters
+import java.io.File
+import java.io.FileOutputStream
+import java.io.InputStream
+import java.io.OutputStream
 import java.security.SecureRandom
 
 class SecureDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
+    private val dbPath = context.getDatabasePath(DATABASE_NAME).absolutePath
+
+    init {
+        checkAndCopyDatabase(context)
+    }
+
     override fun onCreate(db: SQLiteDatabase) {
-        Log.d(TAG, "Creating database and flags table")
-
-        val createTableQuery = """
-            CREATE TABLE IF NOT EXISTS flags (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                hash TEXT NOT NULL,
-                salt TEXT NOT NULL
-            )
-        """.trimIndent()
-
-        db.execSQL(createTableQuery)
-        Log.d(TAG, "Table 'flags' created successfully")
+        // Do nothing, since we're copying from assets
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -31,6 +30,40 @@ class SecureDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
 
         db.execSQL("DROP TABLE IF EXISTS flags") // Delete old table
         onCreate(db) // Recreate table
+    }
+
+    private fun checkAndCopyDatabase(context: Context) {
+        val dbFile = File(dbPath)
+
+        if (!dbFile.exists()) {
+            Log.d(TAG, "Database not found. Copying from assets...")
+            copyDatabaseFromAssets(context)
+        } else {
+            Log.d(TAG, "Database already exists.")
+        }
+    }
+
+    private fun copyDatabaseFromAssets(context: Context) {
+        try {
+            val inputStream: InputStream = context.assets.open(DATABASE_NAME)
+            val outputFile = File(dbPath)
+            val outputStream: OutputStream = FileOutputStream(outputFile)
+
+            val buffer = ByteArray(1024)
+            var length: Int
+
+            while (inputStream.read(buffer).also { length = it } > 0) {
+                outputStream.write(buffer, 0, length)
+            }
+
+            outputStream.flush()
+            outputStream.close()
+            inputStream.close()
+
+            Log.d(TAG, "Database copied successfully from assets.")
+        } catch (e: Exception) {
+            Log.e(TAG, "Error copying database from assets", e)
+        }
     }
 
     fun storeFlag(flag: String) {

@@ -71,12 +71,12 @@ class DeeplinkHandlerActivity : AppCompatActivity() {
 
         val actionParam = queryParams["action"]
         val secretKey = queryParams["key"]
-        //FlagManager.initializeFlagStorage(this)
+//        FlagManager.initializeFlagStorage(this)
         if (actionParam == "getFlag" && SecurityUtils.validateSecretKey(secretKey)) {
             val flag = FlagManager.retrieveFlag(this)
             flagTextView.text = flag  // Show the flag
             checkFlagButton.visibility = View.VISIBLE  // Show "Check Flag" button
-            Log.d("Seinen (青年)", "Paths hide in names; words unlock, not code.")
+            Log.d("Seinen (青年)", "Follow the breadcrumbs: assets → ??? → files. What's hiding in plain sight?")
             Log.d("DeeplinkHandler", "🎉 Flag retrieved successfully!")
         } else {
             flagTextView.text = "Unauthorized access attempt detected!"
