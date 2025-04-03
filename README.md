@@ -48,12 +48,14 @@ This CTF consists of ten challenges, each designed to simulate real-world securi
 - **Goal:** Bypass the detection using Frida or other dynamic instrumentation tools.
 - **Tools:** Frida, Magisk, Xposed
 
-### 9️⃣ Frida Challenge-2 Walkthrough (Validate PIN)
+### 9️⃣ Validate PIN (Frida Bypass)
 - **Description:** The application validates a PIN using a native function in JNI, which can be bypassed.
+- **Goal:** Extract the hardcoded PIN from the native library or override PIN validation using Frida.
 - **Tools:** Frida, jadx, native code analysis
 
-### 🔟 Frida Challenge-3 Walkthrough (License Verification)
+### 🔟 License Verification (Frida Bypass)
 - **Description:** The application checks a license key using native code, which can be bypassed.
+- **Goal:** Hook into the license verification function using Frida and force it to return true.
 - **Tools:** Frida, native code analysis
 
 ## 📌 How to Participate
