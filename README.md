@@ -70,9 +70,6 @@ This CTF consists of ten challenges, each designed to simulate real-world securi
 ### Exploit the Vulnerabilities
 - Use the tools and techniques outlined in each challenge to extract the flag.
 
-### Submit Your Flags
-- Each flag follows the format: `CTF{challenge_solution}`.
-
 ## 🏆 Scoring
 - Each challenge carries a different point value based on difficulty.
 - The participant with the highest score wins!
